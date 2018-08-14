@@ -1,3 +1,17 @@
+## To Setup
+gem install bundler
+bundle install
+
+## To run bash script
+```
+./scripts/league ./examples/sample-input.txt output.txt
+```
+## To run tests suite
+```
+rspec
+```
+
+
 ## Thank you for your interest in I 💛 Jane.
 
 This is a small problem that we would like you to solve so that we can get an
