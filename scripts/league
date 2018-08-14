@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+require 'awesome_print'
+require 'csv'
+require './lib/league.rb'
+
+puts 'Please specify input file' if ARGV.count == 0
+
+input_file = ARGV[0] if ARGV[0] != nil
+output_file = ARGV[1] if ARGV.count == 2
+
+if input_file != nil
+  data = CSV.read(input_file)
+  league = League.new({games: data})
+
+  # print to console
+  puts league.result
+  # print to output file
+  File.open(output_file, 'w') { |file| file.write(league.result) } if output_file != nil
+end
